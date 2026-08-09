@@ -37,7 +37,8 @@ export default function ContactForm() {
     }
 
     try {
-      const response = await fetch('/api/enquiries', {
+      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || '';
+      const response = await fetch(`${apiBaseUrl}/api/enquiries`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
