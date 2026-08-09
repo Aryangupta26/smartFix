@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 0 102 255; /* electric-500 */
+    --primary-hover: 0 82 204;
+    --background: 10 10 10; /* obsidian-800 */
+    --text-primary: 248 250 252;
+    --text-secondary: 148 163 184;
+    --border: 26 26 26;
+    --card-bg: 5 5 5; /* obsidian-900 */
+  }
+
+  /* Force dark mode style for premium tech feel universally */
+  body {
+    background-color: rgb(var(--background));
+    color: rgb(var(--text-primary));
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400;
+  }
+  .text-gradient-primary {
+    @apply text-brand-red;
+  }
+}
+
+/* Custom UI Panel Utilities */
+.glass-panel {
+  background: rgba(18, 18, 18, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0;
+}
+
+.glass-navbar {
+  background: rgba(10, 10, 10, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0;
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 102, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(0, 102, 255, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
