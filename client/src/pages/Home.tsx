@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Wrench, UserCheck, Cpu, Award, Store, ShieldAlert, 
-  ArrowRight, Phone, MessageSquare, Clock, 
-  CheckCircle, ChevronRight
+  Clock, CheckCircle
 } from 'lucide-react';
 import { siteConfig, getWhatsAppUrl } from '../config/site.config.ts';
 import ContactForm from '../components/ContactForm.tsx';
@@ -386,7 +385,7 @@ export default function Home() {
 
           {/* Final copyright footer bar */}
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/60">
-            <p>© 2026 {siteConfig.name}. All rights reserved.</p>
+            <p>© 2026 {siteConfig.businessName}. All rights reserved.</p>
             <p className="mt-4 md:mt-0 font-light">Designed in collaboration with Halo Lab</p>
           </div>
 
